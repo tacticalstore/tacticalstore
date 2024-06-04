@@ -1,0 +1,22 @@
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="res_company_tecfy_salla_view_inherited">
+            <field name="name">res.company.tecfy_salla.view.inherited</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form" />
+            <field name="priority" eval="15" />
+            <field name="arch" type="xml">
+                <xpath expr="//page[1]" position="after">
+                    <page string="Salla" name="tecfy_salla">
+                        <group>
+                            <field name="tecfy_salla_merchant_id" />
+                            <field name="tecfy_salla_ignore_error" />
+                            <field name="tecfy_salla_update_quantity" />
+                            <field name="tecfy_salla_location_ids" />
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>
