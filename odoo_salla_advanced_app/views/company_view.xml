@@ -1,0 +1,15 @@
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="res_company_tecfy_salla_view_inherited">
+            <field name="name">res.company.tecfy_salla.view.inherited</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form" />
+            <field name="priority" eval="15"/>
+            <field name="arch" type="xml">                
+                <xpath expr="//field[@name='tecfy_salla_merchant_id']" position="after">
+                    <field  name="tecfy_salla_order_status_update"/>
+                </xpath>                
+            </field>
+        </record>
+    </data>
+</openerp>

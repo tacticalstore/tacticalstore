@@ -1,0 +1,59 @@
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="sale_order_tecfy_salla_view_inherited">
+            <field name="name">sale.order.tecfy_salla.view.inherited</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form" />
+            <field name="priority" eval="15" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='payment_term_id']" position="after">
+                    <field name="tecfy_salla_update" />
+                </xpath>
+                <xpath expr="//field[@name='payment_term_id']" position="after">
+                    <field name="tecfy_salla_status_update_id" />
+                </xpath>
+                <xpath expr="//page[2]" position="after">
+                    <page string="Salla Order" name="tecfy_salla_order">
+                        <group>
+                            <group string="Order Info">
+                                <field name="tecfy_salla_id" />
+                                <field name="tecfy_salla_ref" />
+                                <field name="tecfy_source" />
+                                <field name="tecfy_source_device" /> 
+                                <field name="tecfy_salla_status" />
+                                <field name="tecfy_payment_method" />
+                                <field name="tecfy_is_pending" />
+                            </group>
+                            <group string="Tracking Info">
+                                <field name="tecfy_shipping_company" />
+                                <field name="tecfy_shipping_tracking_no" />
+                                <field name="tecfy_shipping_tracking_url" widget="url" options="{'website_path': false}" />
+                                <field name="tecfy_shipping_pdf" widget="url" options="{'website_path': false}" />
+                            </group>
+                        </group>                        
+                    </page>
+                </xpath>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="sale_order_tecfy_salla_tree_inherited">
+            <field name="name">sale.order.tecfy_salla.tree.inherited</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_quotation_tree_with_onboarding" />
+            <field name="priority">15</field>
+            <field name="arch" type="xml">
+                <field name="amount_total" position="after">
+                    <field name="tecfy_salla_ref" string="Salla#" optional="hide" />
+                    <field name="tecfy_payment_method" string="Payment Method" optional="hide" />
+                    <field name="tecfy_salla_status" string="Salla Status" optional="hide" />
+                    <field name="tecfy_salla_status_customized" string="Salla Status" optional="hide" />
+                    <field name="tecfy_source_device" string="Source" optional="hide" />
+                    <field name="tecfy_source_info" string="Source Info" optional="hide" />
+                    <field name="tecfy_shipping_company" string="Shipping Company" optional="hide" />
+                    <field name="tecfy_shipping_tracking_no" string="Tracking #" optional="hide" />
+                    <field name="tecfy_shipping_tracking_url" string="Tracking URL" widget="url" options="{'website_path': false}" optional="hide" />
+                    <field name="tecfy_shipping_pdf" string="Shipping Label URL" widget="url" options="{'website_path': false}" optional="hide" />
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>
