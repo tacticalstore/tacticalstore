@@ -1,4 +1,0 @@
-# License MIT (https://opensource.org/licenses/MIT).
-from . import tecfy_company
-from . import tecfy_sale_order
-from . import tecfy_salla_status
